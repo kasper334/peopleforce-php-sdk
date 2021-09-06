@@ -50,7 +50,8 @@ abstract class BaseEndpoint
      */
     private function get(int $id)
     {
-        return $this->request('GET', str_replace('{id}', $id, $this->{__FUNCTION__}));
+        $response = $this->request('GET', str_replace('{id}', $id, $this->{__FUNCTION__}));
+        return $this->transform($response);
     }
 
     // todo post
@@ -71,6 +72,12 @@ abstract class BaseEndpoint
                 ]
             ]);
 
-        return \json_decode($response->getBody()->getContents(), true);
+        return \json_decode($response->getBody()->getContents(), true)['data']; // fixme
     }
+
+    /**
+     * Transform raw API response into entities
+     * @return mixed
+     */
+    abstract protected function transform(array $rawData);
 }

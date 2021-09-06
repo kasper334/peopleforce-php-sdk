@@ -2,6 +2,7 @@
 
 namespace Kasper334\PeopleforceSdk;
 
+use Kasper334\PeopleforceSdk\Endpoints\BaseEndpoint;
 use Kasper334\PeopleforceSdk\Endpoints\Employees;
 
 /**
@@ -29,6 +30,7 @@ class API
     }
 
     /**
+     * @return BaseEndpoint
      * @throws \Exception
      */
     public function __get($name)
@@ -37,7 +39,10 @@ class API
             throw new \Exception("Endpoint \"{$name}\" not found");
         }
 
-        // todo intellisense
+        if (!\is_subclass_of(self::$endpoints[$name], BaseEndpoint::class)) {
+            throw new \Exception("Entity for endpoint \"{$name}\" must extend BaseEndpoint");
+        }
+
         return new self::$endpoints[$name]($this->apiKey);
     }
 }
