@@ -1,0 +1,22 @@
+{
+  "name": "kasper334/peopleforce-sdk",
+  "type": "library",
+  "description": "Unofficial PeopleForce PHP library",
+  "keywords": ["peopleforce", "library"],
+  "license": "MIT",
+  "require": {
+    "php": "^7.3|^8.0",
+    "guzzlehttp/guzzle": "^7.0.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Kasper334\\PeopleforceSdk\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Alexander Sylenko",
+      "email": "kspworks@gmail.com"
+    }
+  ]
+}
