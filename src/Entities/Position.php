@@ -2,7 +2,8 @@
 
 namespace Kasper334\PeopleforceSdk\Entities;
 
-class Position extends BaseEntity
-{
-
-}
+/**
+ * @property int|null $id
+ * @property string|null $name
+ */
+class Position extends BaseEntity {}

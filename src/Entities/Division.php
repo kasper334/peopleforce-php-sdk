@@ -2,7 +2,8 @@
 
 namespace Kasper334\PeopleforceSdk\Entities;
 
-class Division extends BaseEntity
-{
-
-}
+/**
+ * @property int|null $id
+ * @property string|null $name
+ */
+class Division extends BaseEntity {}

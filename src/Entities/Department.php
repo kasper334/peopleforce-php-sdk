@@ -2,7 +2,10 @@
 
 namespace Kasper334\PeopleforceSdk\Entities;
 
-class Department extends BaseEntity
-{
-
-}
+/**
+ * @property int $id
+ * @property string $name
+ * @property int|null $parent_id
+ * @property int|null $manager_id
+ */
+class Department extends BaseEntity {}

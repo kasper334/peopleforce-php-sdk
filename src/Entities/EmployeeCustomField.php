@@ -2,7 +2,10 @@
 
 namespace Kasper334\PeopleforceSdk\Entities;
 
-class EmployeeCustomField extends BaseEntity
-{
-
-}
+/**
+ * @property string $uuid
+ * @property string|null $name
+ * @property string|null $value
+ * @property string|null $group
+ */
+class EmployeeCustomField extends BaseEntity {}
