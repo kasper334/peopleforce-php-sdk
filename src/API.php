@@ -4,16 +4,19 @@ namespace Kasper334\PeopleforceSdk;
 
 use Kasper334\PeopleforceSdk\Endpoints\BaseEndpoint;
 use Kasper334\PeopleforceSdk\Endpoints\Employees;
+use Kasper334\PeopleforceSdk\Endpoints\LeaveRequests;
 
 /**
  * Client used to send requests to PeopleForce's API.
  *
  * @property Employees $employees
+ * @property LeaveRequests $leaveRequests
  */
 class API
 {
     private static $endpoints = [
         'employees' => Employees::class,
+        'leaveRequests' => LeaveRequests::class,
     ];
 
     /**

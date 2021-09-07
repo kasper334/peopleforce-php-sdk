@@ -14,7 +14,7 @@ use Carbon\Carbon;
  * @property string|null $personal_email
  * @property string|null $mobile_number
  * @property Carbon|null $date_of_birth
- * @property string|null $gender enum: male, female
+ * @property string|null $gender enum: Employee::GENDER_*
  * @property string|null $avatar_url
  * @property Carbon|null $probation_ends_on
  * @property Carbon|null $hired_on
@@ -28,6 +28,9 @@ use Carbon\Carbon;
  */
 class Employee extends BaseEntity
 {
+    public const GENDER_MALE = 'male';
+    public const GENDER_FEMALE = 'female';
+
     /**
      * Cast selected properties to Carbon date objects
      * @return array

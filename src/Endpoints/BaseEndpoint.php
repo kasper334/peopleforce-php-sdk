@@ -38,19 +38,31 @@ abstract class BaseEndpoint
     }
 
     /**
+     * @param array $params
+     * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    private function getAll()
+    private function getAll(array $params = [])
     {
-        return $this->request('GET', $this->{__FUNCTION__});
+        $response = $this->request('GET', $this->{__FUNCTION__}, $params);
+
+        $items = [];
+        foreach ($response as $item) {
+            $items[] = $this->transform($item);
+        }
+
+        return $items;
     }
 
     /**
+     * @param int $id
+     * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     private function get(int $id)
     {
         $response = $this->request('GET', str_replace('{id}', $id, $this->{__FUNCTION__}));
+
         return $this->transform($response);
     }
 
@@ -61,16 +73,28 @@ abstract class BaseEndpoint
     // todo delete
 
     /**
+     * @param string $method
+     * @param string $endpoint
+     * @param array $params
+     * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    private function request(string $method, string $endpoint, array $options = [])
+    private function request(string $method, string $endpoint, array $params = [])
     {
-        $response = $this->httpClient
-            ->request($method, self::API_BASE . $endpoint, [
-                'headers' => [
-                    'X-API-KEY' => $this->apiKey,
-                ]
-            ]);
+        $headers = [
+            'X-API-KEY' => $this->apiKey
+        ];
+
+        // needed to implement custom query builder because of PeopleForce's inability to parse encoded square brackets
+        $query = implode('&', \array_map(static function ($value, string $name) {
+            return \is_array($value)
+                ? implode('&', \array_map(static function ($subvalue) use ($name) {
+                    return urlencode($name) . '[]=' . urlencode($subvalue);
+                }, $value))
+                : urlencode($name) . '=' . urlencode($value);
+        }, $params, \array_keys($params)));
+
+        $response = $this->httpClient->request($method, self::API_BASE . $endpoint, compact('headers', 'query'));
 
         return \json_decode($response->getBody()->getContents(), true)['data']; // fixme
     }

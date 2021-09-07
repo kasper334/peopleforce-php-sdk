@@ -5,7 +5,7 @@ namespace Kasper334\PeopleforceSdk\Endpoints;
 use Kasper334\PeopleforceSdk\Entities\Employee;
 
 /**
- * @method Employee[] getAll()
+ * @method Employee[] getAll(array $params = [])
  * @method Employee get(int $id)
  * @method Employee post(array $data)
  * @method Employee put(int $id, array $data)
