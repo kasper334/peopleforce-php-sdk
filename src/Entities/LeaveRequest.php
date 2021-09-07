@@ -9,16 +9,17 @@ use Carbon\Carbon;
  * @property int $employee_id
  * @property string $leave_type
  * @property string $state enum: LeaveRequest::STATE_*
- * @property float $amount
+ * @property string $amount
  * @property Carbon $starts_on
  * @property Carbon $ends_on
  * @property string $comment
- * @property @todo entries
- * @property @todo approvals
+ * @property LeaveRequestEntry[] $entries
+ * @property LeaveRequestApproval[] $approvals
  * @property Carbon $created_at
  * @property Carbon $updated_at
  */
-class LeaveRequest extends BaseEntity {
+class LeaveRequest extends BaseEntity
+{
     public const STATE_PENDING = 'pending';
     public const STATE_APPROVED = 'approved';
     public const STATE_REJECTED = 'rejected';
@@ -35,6 +36,18 @@ class LeaveRequest extends BaseEntity {
             'ends_on' => 'Y-m-d',
             'created_at' => 'Y-m-d\TH:i:s\.v\Z',
             'updated_at' => 'Y-m-d\TH:i:s\.v\Z',
+        ];
+    }
+
+    /**
+     * Cast selected properties to entities
+     * @return array
+     */
+    public function castEntities(): array
+    {
+        return [
+            'entries' => [LeaveRequestEntry::class],
+            'approvals' => [LeaveRequestApproval::class],
         ];
     }
 }

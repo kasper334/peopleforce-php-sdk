@@ -2,6 +2,8 @@
 
 namespace Kasper334\PeopleforceSdk\Endpoints;
 
+use Kasper334\PeopleforceSdk\Helpers;
+
 abstract class BaseEndpoint
 {
     public const API_BASE = 'https://app.peopleforce.io/api/public/v1';
@@ -85,14 +87,7 @@ abstract class BaseEndpoint
             'X-API-KEY' => $this->apiKey
         ];
 
-        // needed to implement custom query builder because of PeopleForce's inability to parse encoded square brackets
-        $query = implode('&', \array_map(static function ($value, string $name) {
-            return \is_array($value)
-                ? implode('&', \array_map(static function ($subvalue) use ($name) {
-                    return urlencode($name) . '[]=' . urlencode($subvalue);
-                }, $value))
-                : urlencode($name) . '=' . urlencode($value);
-        }, $params, \array_keys($params)));
+        $query = Helpers::buildQuery($params);
 
         $response = $this->httpClient->request($method, self::API_BASE . $endpoint, compact('headers', 'query'));
 

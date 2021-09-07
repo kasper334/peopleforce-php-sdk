@@ -46,6 +46,10 @@ class Employee extends BaseEntity
         ];
     }
 
+    /**
+     * Cast selected properties to entities
+     * @return array
+     */
     public function castEntities(): array
     {
         return [
