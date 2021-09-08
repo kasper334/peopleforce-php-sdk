@@ -91,7 +91,22 @@ abstract class BaseEndpoint
 
         $response = $this->httpClient->request($method, self::API_BASE . $endpoint, compact('headers', 'query'));
 
-        return \json_decode($response->getBody()->getContents(), true)['data']; // fixme
+        $payload = \json_decode($response->getBody()->getContents(), true);
+
+        $data = $payload['data'];
+
+        if (!isset($params['page']) && isset($payload['metadata']['pagination']['pages'])) {
+            $pagination = $payload['metadata']['pagination'];
+
+            // fetch all data from other pages
+            for ($i = ($pagination['page'] + 1); $i <= $pagination['pages']; $i++) {
+                $additionalData = $this->request($method, $endpoint, \array_merge($params, ['page' => $i]));
+
+                $data = \array_merge($data, $additionalData);
+            }
+        }
+
+        return $data;
     }
 
     /**
