@@ -6,7 +6,7 @@ namespace Kasper334\PeopleforceSdk\Entities;
  * @property int $user_id
  * @property string $first_name
  * @property string $last_name
- * @property CalendarDataLeaveType $leave_type
+ * @property CalendarDataLeaveType|null $leave_type
  */
 class CalendarData extends BaseEntity {
     /**
