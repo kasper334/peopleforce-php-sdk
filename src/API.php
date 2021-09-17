@@ -3,6 +3,7 @@
 namespace Kasper334\PeopleforceSdk;
 
 use Kasper334\PeopleforceSdk\Endpoints\BaseEndpoint;
+use Kasper334\PeopleforceSdk\Endpoints\Calendars;
 use Kasper334\PeopleforceSdk\Endpoints\Employees;
 use Kasper334\PeopleforceSdk\Endpoints\LeaveRequests;
 
@@ -11,12 +12,14 @@ use Kasper334\PeopleforceSdk\Endpoints\LeaveRequests;
  *
  * @property Employees $employees
  * @property LeaveRequests $leaveRequests
+ * @property Calendars $calendars
  */
 class API
 {
     private static $endpoints = [
         'employees' => Employees::class,
         'leaveRequests' => LeaveRequests::class,
+        'calendars' => Calendars::class,
     ];
 
     /**

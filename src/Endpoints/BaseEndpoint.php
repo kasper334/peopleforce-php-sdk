@@ -93,7 +93,7 @@ abstract class BaseEndpoint
 
         $payload = \json_decode($response->getBody()->getContents(), true);
 
-        $data = $payload['data'];
+        $data = $payload['data'] ?? $payload;
 
         if (!isset($params['page']) && isset($payload['metadata']['pagination']['pages'])) {
             $pagination = $payload['metadata']['pagination'];
