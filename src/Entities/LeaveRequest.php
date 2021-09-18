@@ -25,29 +25,15 @@ class LeaveRequest extends BaseEntity
     public const STATE_REJECTED = 'rejected';
     public const STATE_WITHDRAWN = 'withdrawn';
 
-    /**
-     * Cast selected properties to Carbon date objects
-     * @return array
-     */
-    public function castDates(): array
-    {
-        return [
-            'starts_on' => 'Y-m-d',
-            'ends_on' => 'Y-m-d',
-            'created_at' => 'Y-m-d\TH:i:s\.v\Z',
-            'updated_at' => 'Y-m-d\TH:i:s\.v\Z',
-        ];
-    }
+    protected static $castDates = [
+        'starts_on' => 'Y-m-d',
+        'ends_on' => 'Y-m-d',
+        'created_at' => 'Y-m-d\TH:i:s\.v\Z',
+        'updated_at' => 'Y-m-d\TH:i:s\.v\Z',
+    ];
 
-    /**
-     * Cast selected properties to entities
-     * @return array
-     */
-    public function castEntities(): array
-    {
-        return [
-            'entries' => [LeaveRequestEntry::class],
-            'approvals' => [LeaveRequestApproval::class],
-        ];
-    }
+    protected static $castEntities = [
+        'entries' => [LeaveRequestEntry::class],
+        'approvals' => [LeaveRequestApproval::class],
+    ];
 }

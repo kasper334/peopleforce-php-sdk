@@ -9,14 +9,7 @@ namespace Kasper334\PeopleforceSdk\Entities;
  * @property CalendarDataLeaveType|null $leave_type
  */
 class CalendarData extends BaseEntity {
-    /**
-     * Cast selected properties to entities
-     * @return array
-     */
-    public function castEntities(): array
-    {
-        return [
-            'leave_type' => CalendarDataLeaveType::class,
-        ];
-    }
+    protected static $castEntities = [
+        'leave_type' => CalendarDataLeaveType::class,
+    ];
 }

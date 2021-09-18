@@ -10,14 +10,7 @@ use Carbon\Carbon;
  */
 class LeaveRequestEntry extends BaseEntity
 {
-    /**
-     * Cast selected properties to Carbon date objects
-     * @return array
-     */
-    public function castDates(): array
-    {
-        return [
-            'date' => 'Y-m-d',
-        ];
-    }
+    protected static $castDates = [
+        'date' => 'Y-m-d',
+    ];
 }
