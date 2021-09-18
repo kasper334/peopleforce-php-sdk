@@ -17,26 +17,12 @@ class Calendar extends BaseEntity
     public const TYPE_FIRST_DAY = 'first_day';
     public const TYPE_LEAVE_REQUEST = 'leave_request';
 
-    /**
-     * Cast selected properties to Carbon date objects
-     * @return array
-     */
-    public function castDates(): array
-    {
-        return [
-            'starts_on' => 'Y-m-d',
-            'ends_on' => 'Y-m-d',
-        ];
-    }
+    protected static $castDates = [
+        'starts_on' => 'Y-m-d',
+        'ends_on' => 'Y-m-d',
+    ];
 
-    /**
-     * Cast selected properties to entities
-     * @return array
-     */
-    public function castEntities(): array
-    {
-        return [
-            'data' => CalendarData::class,
-        ];
-    }
+    protected static $castEntities = [
+        'data' => CalendarData::class,
+    ];
 }

@@ -8,14 +8,7 @@ namespace Kasper334\PeopleforceSdk\Entities;
  */
 class LeaveRequestApproval extends BaseEntity
 {
-    /**
-     * Cast selected properties to entities
-     * @return array
-     */
-    public function castEntities(): array
-    {
-        return [
-            'assigned_to' => LeaveRequestApprovalAssignee::class,
-        ];
-    }
+    protected static $castEntities = [
+        'assigned_to' => LeaveRequestApprovalAssignee::class,
+    ];
 }

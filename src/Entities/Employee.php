@@ -31,33 +31,19 @@ class Employee extends BaseEntity
     public const GENDER_MALE = 'male';
     public const GENDER_FEMALE = 'female';
 
-    /**
-     * Cast selected properties to Carbon date objects
-     * @return array
-     */
-    public function castDates(): array
-    {
-        return [
-            'date_of_birth' => 'Y-m-d',
-            'probation_ends_on' => 'Y-m-d',
-            'hired_on' => 'Y-m-d',
-            'created_at' => 'Y-m-d\TH:i:s\.v\Z',
-            'updated_at' => 'Y-m-d\TH:i:s\.v\Z',
-        ];
-    }
+    protected static $castDates = [
+        'date_of_birth' => 'Y-m-d',
+        'probation_ends_on' => 'Y-m-d',
+        'hired_on' => 'Y-m-d',
+        'created_at' => 'Y-m-d\TH:i:s\.v\Z',
+        'updated_at' => 'Y-m-d\TH:i:s\.v\Z',
+    ];
 
-    /**
-     * Cast selected properties to entities
-     * @return array
-     */
-    public function castEntities(): array
-    {
-        return [
-            'location' => Location::class,
-            'position' => Position::class,
-            'division' => Division::class,
-            'department' => Department::class,
-            'custom_fields' => [EmployeeCustomField::class],
-        ];
-    }
+    protected static $castEntities = [
+        'location' => Location::class,
+        'position' => Position::class,
+        'division' => Division::class,
+        'department' => Department::class,
+        'custom_fields' => [EmployeeCustomField::class],
+    ];
 }
