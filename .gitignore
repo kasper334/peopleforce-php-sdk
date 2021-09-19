@@ -16,3 +16,7 @@ composer.lock
 # Ignore phpDocumentor's local config and artifacts
 .phpdoc/*
 phpdoc.xml
+
+# Ignore files used for testing
+.env
+cghooks.lock

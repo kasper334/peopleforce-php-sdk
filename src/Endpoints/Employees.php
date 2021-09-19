@@ -7,8 +7,8 @@ use Kasper334\PeopleforceSdk\Entities\Employee;
 /**
  * @method Employee[] getAll(array $params = [])
  * @method Employee get(int $id)
- * @method Employee post(array $data)
- * @method Employee put(int $id, array $data)
+ * todo method Employee post(array $data)
+ * todo method Employee put(int $id, array $data)
  */
 class Employees extends BaseEndpoint
 {
