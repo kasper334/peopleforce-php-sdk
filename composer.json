@@ -12,8 +12,7 @@
   },
   "require-dev": {
     "phpunit/phpunit": "^9.5",
-    "brainmaestro/composer-git-hooks": "^2.8",
-    "vlucas/phpdotenv": "^5.3"
+    "brainmaestro/composer-git-hooks": "^2.8"
   },
   "autoload": {
     "psr-4": {
@@ -27,6 +26,9 @@
       "email": "kspworks@gmail.com"
     }
   ],
+  "scripts": {
+    "test": "./vendor/bin/phpunit tests --testdox"
+  },
   "extra": {
     "hooks": {
       "pre-push": [

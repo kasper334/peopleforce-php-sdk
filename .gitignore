@@ -18,5 +18,5 @@ composer.lock
 phpdoc.xml
 
 # Ignore files used for testing
-.env
+.phpunit.result.cache
 cghooks.lock

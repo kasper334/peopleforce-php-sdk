@@ -1,0 +1,218 @@
+[
+  {
+    "type": "birthday",
+    "title": "Name1 Surname1celebrating birthday today!",
+    "starts_on": "2021-05-06",
+    "ends_on": "2021-05-06",
+    "data": {
+      "user_id": 23,
+      "first_name": "Name1",
+      "last_name": "Surname1"
+    }
+  },
+  {
+    "type": "birthday",
+    "title": "Name2 Surname2celebrating birthday today!",
+    "starts_on": "2021-05-09",
+    "ends_on": "2021-05-09",
+    "data": {
+      "user_id": 21,
+      "first_name": "Name2",
+      "last_name": "Surname2"
+    }
+  },
+  {
+    "type": "birthday",
+    "title": "Name3 Surname3celebrating birthday today!",
+    "starts_on": "2021-05-18",
+    "ends_on": "2021-05-18",
+    "data": {
+      "user_id": 24,
+      "first_name": "Name3",
+      "last_name": "Surname3"
+    }
+  },
+  {
+    "type": "birthday",
+    "title": "Name4 Surname4celebrating birthday today!",
+    "starts_on": "2021-05-28",
+    "ends_on": "2021-05-28",
+    "data": {
+      "user_id": 93,
+      "first_name": "Name4",
+      "last_name": "Surname4"
+    }
+  },
+  {
+    "type": "birthday",
+    "title": "Name5 Surname5celebrating birthday today!",
+    "starts_on": "2021-05-30",
+    "ends_on": "2021-05-30",
+    "data": {
+      "user_id": 92,
+      "first_name": "Name5",
+      "last_name": "Surname5"
+    }
+  },
+  {
+    "type": "leave_request",
+    "title": "Name6 Surname6 Remote work",
+    "starts_on": "2021-05-03",
+    "ends_on": "2021-05-03",
+    "data": {
+      "user_id": 81,
+      "first_name": "Name6",
+      "last_name": "Surname6",
+      "leave_type": {
+        "id": 66,
+        "name": "Remote work"
+      }
+    }
+  },
+  {
+    "type": "leave_request",
+    "title": "Name2 Surname2 Sick leave",
+    "starts_on": "2021-05-07",
+    "ends_on": "2021-05-07",
+    "data": {
+      "user_id": 21,
+      "first_name": "Name2",
+      "last_name": "Surname2",
+      "leave_type": {
+        "id": 88,
+        "name": "Sick leave"
+      }
+    }
+  },
+  {
+    "type": "leave_request",
+    "title": "Name7 Surname7 Remote work",
+    "starts_on": "2021-05-13",
+    "ends_on": "2021-05-13",
+    "data": {
+      "user_id": 82,
+      "first_name": "Name7",
+      "last_name": "Surname7",
+      "leave_type": {
+        "id": 66,
+        "name": "Remote work"
+      }
+    }
+  },
+  {
+    "type": "leave_request",
+    "title": "Name8 Surname8 Remote work",
+    "starts_on": "2021-05-15",
+    "ends_on": "2021-05-16",
+    "data": {
+      "user_id": 18,
+      "first_name": "Name8",
+      "last_name": "Surname8",
+      "leave_type": {
+        "id": 66,
+        "name": "Remote work"
+      }
+    }
+  },
+  {
+    "type": "leave_request",
+    "title": "Name8 Surname8 Sick leave",
+    "starts_on": "2021-05-07",
+    "ends_on": "2021-05-07",
+    "data": {
+      "user_id": 18,
+      "first_name": "Name8",
+      "last_name": "Surname8",
+      "leave_type": {
+        "id": 88,
+        "name": "Sick leave"
+      }
+    }
+  },
+  {
+    "type": "leave_request",
+    "title": "Name8 Surname8 Remote work",
+    "starts_on": "2021-05-03",
+    "ends_on": "2021-05-03",
+    "data": {
+      "user_id": 18,
+      "first_name": "Name8",
+      "last_name": "Surname8",
+      "leave_type": {
+        "id": 66,
+        "name": "Remote work"
+      }
+    }
+  },
+  {
+    "type": "leave_request",
+    "title": "Name8 Surname8 Vacation",
+    "starts_on": "2021-05-20",
+    "ends_on": "2021-05-24",
+    "data": {
+      "user_id": 18,
+      "first_name": "Name8",
+      "last_name": "Surname8",
+      "leave_type": {
+        "id": 33,
+        "name": "Vacation"
+      }
+    }
+  },
+  {
+    "type": "leave_request",
+    "title": "Name9 Surname9 Remote work",
+    "starts_on": "2021-05-09",
+    "ends_on": "2021-05-09",
+    "data": {
+      "user_id": 29,
+      "first_name": "Name9",
+      "last_name": "Surname9",
+      "leave_type": {
+        "id": 66,
+        "name": "Remote work"
+      }
+    }
+  },
+  {
+    "type": "leave_request",
+    "title": "Name4 Surname4 Remote work",
+    "starts_on": "2021-05-15",
+    "ends_on": "2021-05-15",
+    "data": {
+      "user_id": 93,
+      "first_name": "Name4",
+      "last_name": "Surname4",
+      "leave_type": {
+        "id": 66,
+        "name": "Remote work"
+      }
+    }
+  },
+  {
+    "type": "leave_request",
+    "title": "Name10 Surname10 Sick leave",
+    "starts_on": "2021-05-06",
+    "ends_on": "2021-05-06",
+    "data": {
+      "user_id": 73,
+      "first_name": "Name10",
+      "last_name": "Surname10",
+      "leave_type": {
+        "id": 88,
+        "name": "Sick leave"
+      }
+    }
+  },
+  {
+    "type": "first_day",
+    "title": "Name5 Surname11 starts to work",
+    "starts_on": "2021-05-06",
+    "ends_on": "2021-05-06",
+    "data": {
+      "user_id": 46,
+      "first_name": "Name5",
+      "last_name": "Surname11"
+    }
+  }
+]

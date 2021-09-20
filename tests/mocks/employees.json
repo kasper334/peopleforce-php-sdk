@@ -1,0 +1,143 @@
+{
+  "data": [
+    {
+      "id": 57,
+      "active": true,
+      "employee_number": null,
+      "full_name": "Name1 Surname1",
+      "first_name": "Name1",
+      "middle_name": "",
+      "last_name": "Surname1",
+      "email": "name1surname1@example.com",
+      "personal_email": null,
+      "mobile_number": "+123456789012",
+      "date_of_birth": "1970-01-01",
+      "gender": "male",
+      "avatar_url": "https://example.com/image1.jpg",
+      "probation_ends_on": null,
+      "hired_on": "2000-01-01",
+      "position": {
+        "id": 55,
+        "name": " Position1"
+      },
+      "location": null,
+      "employment_type": {
+        "id": 31,
+        "name": "EmploymentType1"
+      },
+      "division": null,
+      "department": {
+        "id": 97,
+        "name": "Department1"
+      },
+      "created_at": "2000-01-23T12:11:23.236Z",
+      "updated_at": "2000-09-20T09:08:29.000Z",
+      "custom_fields": [
+        {
+          "uuid": "aaabbbcc-8888-5555-7777-030303eaeaea",
+          "name": "Some custom field",
+          "value": "someValue",
+          "group": "Contact"
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "active": true,
+      "employee_number": null,
+      "full_name": "Name2 Surname2",
+      "first_name": "Name2",
+      "middle_name": "",
+      "last_name": "Surname2",
+      "email": "name2surname2@example.com",
+      "personal_email": null,
+      "mobile_number": "+123456789012",
+      "date_of_birth": "1970-01-01",
+      "gender": "male",
+      "avatar_url": "https://example.com/image2.jpg",
+      "probation_ends_on": null,
+      "hired_on": "2000-01-01",
+      "position": {
+        "id": 55,
+        "name": " Position1"
+      },
+      "location": {
+        "id": 80,
+        "name": "CityName",
+        "holiday_policy_id": null
+      },
+      "employment_type": {
+        "id": 31,
+        "name": "EmploymentType1"
+      },
+      "division": null,
+      "department": {
+        "id": 97,
+        "name": "Department1"
+      },
+      "created_at": "2000-01-23T12:11:23.236Z",
+      "updated_at": "2000-09-20T09:08:29.000Z",
+      "custom_fields": [
+        {
+          "uuid": "aaabbbcc-8888-5555-7777-030303eaeaea",
+          "name": "Some custom field",
+          "value": "someValue",
+          "group": "Contact"
+        }
+      ]
+    },
+    {
+      "id": 60,
+      "active": true,
+      "employee_number": null,
+      "full_name": "Name3 Surname3",
+      "first_name": "Name3",
+      "middle_name": "",
+      "last_name": "Surname3",
+      "email": "name3surname3@example.com",
+      "personal_email": null,
+      "mobile_number": "+123456789012",
+      "date_of_birth": "1970-01-01",
+      "gender": "female",
+      "avatar_url": "https://example.com/image3.jpg",
+      "probation_ends_on": null,
+      "hired_on": "2000-01-01",
+      "position": {
+        "id": 55,
+        "name": " Position1"
+      },
+      "location": {
+        "id": 80,
+        "name": "CityName",
+        "holiday_policy_id": null
+      },
+      "employment_type": {
+        "id": 31,
+        "name": "EmploymentType1"
+      },
+      "division": null,
+      "department": {
+        "id": 97,
+        "name": "Department1"
+      },
+      "created_at": "2000-01-23T12:11:23.236Z",
+      "updated_at": "2000-09-20T09:08:29.000Z",
+      "custom_fields": [
+        {
+          "uuid": "aaabbbcc-8888-5555-7777-030303eaeaea",
+          "name": "Some custom field",
+          "value": "someValue",
+          "group": "Contact"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "pagination": {
+      "page": 1,
+      "pages": 1,
+      "count": 3,
+      "items": 3
+    }
+  }
+}
