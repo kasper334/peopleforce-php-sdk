@@ -89,9 +89,17 @@ abstract class BaseEndpoint
 
         $query = Helpers::buildQuery($params);
 
-        $response = $this->httpClient->request($method, self::API_BASE . $endpoint, compact('headers', 'query'));
+        if (getenv('APP_ENV') === 'testing') {
+            $workingDir = getcwd();
+            $fileName = str_replace('/', '_', trim($endpoint, '/'));
+            $mockData = file_get_contents("$workingDir/tests/mocks/$fileName.json");
 
-        $payload = \json_decode($response->getBody()->getContents(), true);
+            $payload = \json_decode($mockData, true);
+        } else {
+            $response = $this->httpClient->request($method, self::API_BASE . $endpoint, compact('headers', 'query'));
+
+            $payload = \json_decode($response->getBody()->getContents(), true);
+        }
 
         $data = $payload['data'] ?? $payload;
 

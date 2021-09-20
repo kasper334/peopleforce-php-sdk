@@ -25,9 +25,7 @@ class EmployeesTest extends BaseTestCase
      */
     public function get(): void
     {
-        $id = $this->api->employees->getAll(['page' => 1])[0]->id;
-
-        $employee = $this->api->employees->get($id);
+        $employee = $this->api->employees->get(42);
         $this->assertIsEmployeeEntity($employee);
     }
 

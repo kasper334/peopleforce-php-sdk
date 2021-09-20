@@ -30,17 +30,4 @@ class CalendarsTest extends BaseTestCase
             }
         }
     }
-
-    /**
-     * @test
-     */
-    public function getAllWithFilter(): void
-    {
-        $calendarEvents = $this->api->calendars->getAll([
-            'starts_on' => '2199-01-01',
-            'ends_on' => '2199-01-01',
-        ]);
-
-        $this->assertCount(0, $calendarEvents);
-    }
 }
