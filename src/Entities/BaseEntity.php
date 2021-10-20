@@ -31,7 +31,7 @@ abstract class BaseEntity
         // cast dates
         foreach (static::$castDates as $property => $format) {
             if ($initialValues[$property] ?? null) {
-                $this->$property = Carbon::createFromFormat($format, $initialValues[$property]);
+                $this->$property = Carbon::createFromFormat($format, $initialValues[$property], 'UTC');
             }
         }
 

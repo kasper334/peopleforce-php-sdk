@@ -2,7 +2,12 @@
 
 This is some minimal implementation of SDK for PeopleForce (WIP).
 
-Usage:
+### Installation
+```bash
+composer require kasper334/peopleforce-sdk
+```
+
+### Usage:
 ```php
 use Kasper334\PeopleforceSdk\API;
 use Kasper334\PeopleforceSdk\Entities\LeaveRequest;
