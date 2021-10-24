@@ -20,3 +20,4 @@ phpdoc.xml
 # Ignore files used for testing
 .phpunit.result.cache
 cghooks.lock
+test.php

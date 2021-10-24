@@ -2,10 +2,7 @@
 
 namespace Kasper334\PeopleforceSdk;
 
-use Kasper334\PeopleforceSdk\Endpoints\BaseEndpoint;
-use Kasper334\PeopleforceSdk\Endpoints\Calendars;
-use Kasper334\PeopleforceSdk\Endpoints\Employees;
-use Kasper334\PeopleforceSdk\Endpoints\LeaveRequests;
+use Kasper334\PeopleforceSdk\Endpoints\{BaseEndpoint, Calendars, Employees, LeaveRequests, Teams};
 
 /**
  * Client used to send requests to PeopleForce's API.
@@ -13,6 +10,7 @@ use Kasper334\PeopleforceSdk\Endpoints\LeaveRequests;
  * @property Employees $employees
  * @property LeaveRequests $leaveRequests
  * @property Calendars $calendars
+ * @property Teams $teams
  */
 class API
 {
@@ -20,6 +18,7 @@ class API
         'employees' => Employees::class,
         'leaveRequests' => LeaveRequests::class,
         'calendars' => Calendars::class,
+        'teams' => Teams::class,
     ];
 
     /**

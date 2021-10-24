@@ -1,0 +1,45 @@
+[
+  {
+    "id": 49,
+    "name": "Team1",
+    "description": "",
+    "created_at": "2000-01-23T12:11:23.236Z",
+    "updated_at": "2000-01-23T12:13:23.236Z",
+    "team_lead": {
+      "id": 12,
+      "full_name": "Name1 Surname1",
+      "email": "name1surname1@example.com"
+    },
+    "team_members": [
+      {
+        "id": 57,
+        "user": {
+          "id": 32,
+          "full_name": "Name2 Surname2",
+          "email": "name2surname2@example.com"
+        }
+      },
+      {
+        "id": 26,
+        "user": {
+          "id": 14,
+          "full_name": "Name3 Surname3",
+          "email": "name3surname3@example.com"
+        }
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "name": "Team2",
+    "description": "Team description",
+    "created_at": "2000-01-25T12:11:23.236Z",
+    "updated_at": "2000-01-25T12:13:23.236Z",
+    "team_lead": {
+      "id": 12,
+      "full_name": "Name1 Surname1",
+      "email": "name1surname1@example.com"
+    },
+    "team_members": []
+  }
+]

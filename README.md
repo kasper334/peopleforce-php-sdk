@@ -15,7 +15,8 @@ use Kasper334\PeopleforceSdk\Entities\LeaveRequest;
 $api = new API('PEOPLEFORCE_API_KEY');
 
 $pendingLeaveRequests = $api->leaveRequests->getAll([
-    'state' => [LeaveRequest::STATE_PENDING]
+    'states' => [LeaveRequest::STATE_PENDING],
+    'employee_ids' => [12345],
 ]);
 
 $employees = $api->employees->getAll();
@@ -26,4 +27,6 @@ $todayCalendarEvents = $api->calendars->getAll([
     'starts_on' => '2021-09-19',
     'ends_on' => '2021-09-19',
 ]);
+
+$teams = $api->teams->getAll();
 ```
