@@ -2,7 +2,7 @@
 
 namespace Kasper334\Tests;
 
-use Kasper334\PeopleforceSdk\Endpoints\{Calendars, Employees, LeaveRequests};
+use Kasper334\PeopleforceSdk\Endpoints\{Calendars, Employees, LeaveRequests, LeaveTypes, Teams};
 
 class ApiTest extends BaseTestCase
 {
@@ -14,6 +14,8 @@ class ApiTest extends BaseTestCase
         $this->assertInstanceOf(LeaveRequests::class, $this->api->leaveRequests);
         $this->assertInstanceOf(Calendars::class, $this->api->calendars);
         $this->assertInstanceOf(Employees::class, $this->api->employees);
+        $this->assertInstanceOf(Teams::class, $this->api->teams);
+        $this->assertInstanceOf(LeaveTypes::class, $this->api->leaveTypes);
     }
 
     /**

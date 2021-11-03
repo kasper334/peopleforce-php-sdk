@@ -1,0 +1,44 @@
+{
+  "data": [
+    {
+      "id": 12,
+      "name": "Vacation",
+      "unit": "days",
+      "hex_color": "#3794ec",
+      "fa_class": "fas fa-plane",
+      "created_at": "2020-01-01T10:00:00.186Z"
+    },
+    {
+      "id": 13,
+      "name": "Sick leave",
+      "unit": "days",
+      "hex_color": "#ff0000",
+      "fa_class": "fas fa-briefcase-medical",
+      "created_at": "2020-01-01T10:00:00.307Z"
+    },
+    {
+      "id": 15,
+      "name": "Day off",
+      "unit": "days",
+      "hex_color": "#108b21",
+      "fa_class": "fas fa-money-bill-wave",
+      "created_at": "2020-01-01T10:00:00.425Z"
+    },
+    {
+      "id": 41,
+      "name": "Remote work",
+      "unit": "days",
+      "hex_color": "#f5e709",
+      "fa_class": "fas fa-house-user",
+      "created_at": "2020-01-01T10:00:00.520Z"
+    }
+  ],
+  "metadata": {
+    "pagination": {
+      "page": 1,
+      "pages": 1,
+      "count": 4,
+      "items": 4
+    }
+  }
+}
