@@ -15,6 +15,6 @@ use Carbon\Carbon;
 class LeaveType extends BaseEntity
 {
     protected static $castDates = [
-        'created_at' => 'Y-m-d\TH:i:s\.v\Z',
+        'created_at' => '!Y-m-d\TH:i:s\.v\Z',
     ];
 }

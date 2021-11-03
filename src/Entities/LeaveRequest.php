@@ -26,10 +26,10 @@ class LeaveRequest extends BaseEntity
     public const STATE_WITHDRAWN = 'withdrawn';
 
     protected static $castDates = [
-        'starts_on' => 'Y-m-d',
-        'ends_on' => 'Y-m-d',
-        'created_at' => 'Y-m-d\TH:i:s\.v\Z',
-        'updated_at' => 'Y-m-d\TH:i:s\.v\Z',
+        'starts_on' => '!Y-m-d',
+        'ends_on' => '!Y-m-d',
+        'created_at' => '!Y-m-d\TH:i:s\.v\Z',
+        'updated_at' => '!Y-m-d\TH:i:s\.v\Z',
     ];
 
     protected static $castEntities = [
