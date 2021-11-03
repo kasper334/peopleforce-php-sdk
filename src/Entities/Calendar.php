@@ -18,8 +18,8 @@ class Calendar extends BaseEntity
     public const TYPE_LEAVE_REQUEST = 'leave_request';
 
     protected static $castDates = [
-        'starts_on' => 'Y-m-d',
-        'ends_on' => 'Y-m-d',
+        'starts_on' => '!Y-m-d',
+        'ends_on' => '!Y-m-d',
     ];
 
     protected static $castEntities = [

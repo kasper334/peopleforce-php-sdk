@@ -29,4 +29,6 @@ $todayCalendarEvents = $api->calendars->getAll([
 ]);
 
 $teams = $api->teams->getAll();
+
+$leaveTypes = $api->leaveTypes->getAll();
 ```

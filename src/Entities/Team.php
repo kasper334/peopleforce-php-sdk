@@ -17,8 +17,8 @@ use Carbon\Carbon;
 class Team extends BaseEntity
 {
     protected static $castDates = [
-        'created_at' => 'Y-m-d\TH:i:s\.v\Z',
-        'updated_at' => 'Y-m-d\TH:i:s\.v\Z',
+        'created_at' => '!Y-m-d\TH:i:s\.v\Z',
+        'updated_at' => '!Y-m-d\TH:i:s\.v\Z',
     ];
 
     protected static $castEntities = [

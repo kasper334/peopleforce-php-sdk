@@ -32,11 +32,11 @@ class Employee extends BaseEntity
     public const GENDER_FEMALE = 'female';
 
     protected static $castDates = [
-        'date_of_birth' => 'Y-m-d',
-        'probation_ends_on' => 'Y-m-d',
-        'hired_on' => 'Y-m-d',
-        'created_at' => 'Y-m-d\TH:i:s\.v\Z',
-        'updated_at' => 'Y-m-d\TH:i:s\.v\Z',
+        'date_of_birth' => '!Y-m-d',
+        'probation_ends_on' => '!Y-m-d',
+        'hired_on' => '!Y-m-d',
+        'created_at' => '!Y-m-d\TH:i:s\.v\Z',
+        'updated_at' => '!Y-m-d\TH:i:s\.v\Z',
     ];
 
     protected static $castEntities = [

@@ -11,6 +11,6 @@ use Carbon\Carbon;
 class LeaveRequestEntry extends BaseEntity
 {
     protected static $castDates = [
-        'date' => 'Y-m-d',
+        'date' => '!Y-m-d',
     ];
 }
