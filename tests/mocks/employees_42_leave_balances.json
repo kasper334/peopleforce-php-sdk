@@ -1,0 +1,72 @@
+{
+  "data": [
+    {
+      "id": 138,
+      "effective_on": "2015-06-01",
+      "balance": "5.0",
+      "leave_type_policy": {
+        "id": 18,
+        "name": "Standard"
+      },
+      "leave_type": {
+        "id": 15,
+        "name": "Day off",
+        "unit": "days",
+        "hex_color": "#108b21",
+        "fa_class": "fas fa-money-bill-wave",
+        "created_at": "2020-01-01T10:00:00.186Z"
+      }
+    },
+    {
+      "id": 702,
+      "effective_on": "2015-06-01",
+      "balance": "2.0",
+      "leave_type_policy": {
+        "id": 6,
+        "name": "Remote work"
+      },
+      "leave_type": {
+        "id": 41,
+        "name": "Remote work",
+        "unit": "days",
+        "hex_color": "#f5e709",
+        "fa_class": "fas fa-house-user",
+        "created_at": "2020-01-01T10:00:00.460Z"
+      }
+    },
+    {
+      "id": 136,
+      "effective_on": "2015-06-01",
+      "balance": "10.0",
+      "leave_type_policy": {
+        "id": 58,
+        "name": "Standard"
+      },
+      "leave_type": {
+        "id": 12,
+        "name": "Vacation",
+        "unit": "days",
+        "hex_color": "#3794ec",
+        "fa_class": "fas fa-plane",
+        "created_at": "2020-01-01T10:00:00.786Z"
+      }
+    },
+    {
+      "id": 137,
+      "effective_on": "2015-06-01",
+      "balance": "12.0",
+      "leave_type_policy": {
+        "id": 59,
+        "name": "Sick leave"
+      },
+      "leave_type": {
+        "id": 13,
+        "name": "Sick leave",
+        "unit": "days",
+        "hex_color": "#ff0000",
+        "fa_class": "fas fa-briefcase-medical",
+        "created_at": "2020-01-01T10:00:00.997Z"
+      }
+    }
+  ]
+}

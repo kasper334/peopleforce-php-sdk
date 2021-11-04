@@ -19,6 +19,11 @@ abstract class BaseEndpoint
     private $httpClient;
 
     /**
+     * @var BaseEndpoint[]
+     */
+    protected $subEndpoints = [];
+
+    /**
      * @param string $apiKey
      */
     public function __construct(string $apiKey)
@@ -32,11 +37,23 @@ abstract class BaseEndpoint
      */
     public function __call($name, $arguments)
     {
-        if (!\property_exists($this, $name)) {
-            throw new \Exception("Method \"{$name}\" not found");
+        if (\property_exists($this, $name)) {
+            return $this->$name(...$arguments);
         }
 
-        return $this->$name(...$arguments);
+        throw new \Exception("Method \"{$name}\" not found");
+    }
+
+    /**
+     * @throws \Exception
+     */
+    public function __get($name)
+    {
+        if (\array_key_exists($name, $this->subEndpoints) && \is_subclass_of($this->subEndpoints[$name], self::class)) {
+            return new $this->subEndpoints[$name]($this->apiKey);
+        }
+
+        throw new \Exception("Property \"{$name}\" not found");
     }
 
     /**
