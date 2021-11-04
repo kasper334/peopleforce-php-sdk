@@ -3,7 +3,17 @@
 namespace Kasper334\Tests;
 
 use Carbon\Carbon;
-use Kasper334\PeopleforceSdk\Entities\{Department, Division, Employee, EmployeeCustomField, Location, Position};
+use Kasper334\PeopleforceSdk\Entities\{
+    Department,
+    Division,
+    Employee,
+    EmployeeCustomField,
+    LeaveBalance,
+    LeaveBalanceLeaveType,
+    LeaveBalanceLeaveTypePolicy,
+    Location,
+    Position
+};
 
 class EmployeesTest extends BaseTestCase
 {
@@ -27,6 +37,30 @@ class EmployeesTest extends BaseTestCase
     {
         $employee = $this->api->employees->get(42);
         $this->assertIsEmployeeEntity($employee);
+    }
+
+    /**
+     * @test
+     */
+    public function getLeaveBalances(): void
+    {
+        $employeeLeaveBalances = $this->api->employees->leaveBalances->get(42);
+
+        $this->assertIsArray($employeeLeaveBalances);
+
+        $this->assertGreaterThan(0, count($employeeLeaveBalances));
+
+        foreach ($employeeLeaveBalances as $leaveBalance) {
+            $this->assertInstanceOf(LeaveBalance::class, $leaveBalance);
+
+            $this->assertInstanceOf(Carbon::class, $leaveBalance->effective_on);
+
+            $this->assertInstanceOf(LeaveBalanceLeaveTypePolicy::class, $leaveBalance->leave_type_policy);
+
+            $this->assertInstanceOf(LeaveBalanceLeaveType::class, $leaveBalance->leave_type);
+
+            $this->assertInstanceOf(Carbon::class, $leaveBalance->leave_type->created_at);
+        }
     }
 
     private function assertIsEmployeeEntity($employee): void
