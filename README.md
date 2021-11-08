@@ -17,6 +17,8 @@ $api = new API('PEOPLEFORCE_API_KEY');
 $pendingLeaveRequests = $api->leaveRequests->getAll([
     'states' => [LeaveRequest::STATE_PENDING],
     'employee_ids' => [12345],
+    'starts_on' => '2021-01-01',
+    'ends_on' => '2021-01-31',
 ]);
 
 $employees = $api->employees->getAll();
