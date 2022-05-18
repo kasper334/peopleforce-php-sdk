@@ -37,8 +37,8 @@ abstract class BaseEndpoint
      */
     public function __call($name, $arguments)
     {
-        if (\property_exists($this, $name)) {
-            return $this->$name(...$arguments);
+        if (\property_exists($this, $name)) { // if we have *property* with endpoint path specified
+            return $this->$name(...$arguments); // call the corresponding endpoint *method*
         }
 
         throw new \Exception("Method \"{$name}\" not found");
