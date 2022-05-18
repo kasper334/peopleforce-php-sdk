@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Kasper334\PeopleforceSdk\Entities\{
     Department,
     Division,
+    EmergencyContact,
     Employee,
     EmployeeCustomField,
     LeaveBalance,
@@ -60,6 +61,22 @@ class EmployeesTest extends BaseTestCase
             $this->assertInstanceOf(LeaveBalanceLeaveType::class, $leaveBalance->leave_type);
 
             $this->assertInstanceOf(Carbon::class, $leaveBalance->leave_type->created_at);
+        }
+    }
+
+    /**
+     * @test
+     */
+    public function getEmergencyContacts(): void
+    {
+        $employeeEmergencyContacts = $this->api->employees->emergencyContacts->get(42);
+
+        $this->assertIsArray($employeeEmergencyContacts);
+
+        $this->assertGreaterThan(0, count($employeeEmergencyContacts));
+
+        foreach ($employeeEmergencyContacts as $emergencyContact) {
+            $this->assertInstanceOf(EmergencyContact::class, $emergencyContact);
         }
     }
 

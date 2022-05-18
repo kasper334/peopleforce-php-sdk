@@ -27,6 +27,8 @@ $someEmployee = $api->employees->get(112233);
 
 $someEmployeeLeaveBalances = $api->employees->leaveBalances->get(112233);
 
+$someEmployeeEmergencyContacts = $api->employees->emergencyContacts->get(112233);
+
 $todayCalendarEvents = $api->calendars->getAll([
     'starts_on' => '2021-09-19',
     'ends_on' => '2021-09-19',
