@@ -106,10 +106,10 @@ abstract class BaseEndpoint
 
         $query = Helpers::buildQuery($params);
 
-        if (getenv('APP_ENV') === 'testing') {
-            $workingDir = getcwd();
+        if (getenv('APP_ENV') === 'testing' || $this->apiKey === 'testing') {
+            $rootDir = __DIR__ . '/../..';
             $fileName = str_replace('/', '_', trim($endpoint, '/'));
-            $mockData = file_get_contents("$workingDir/tests/mocks/$fileName.json");
+            $mockData = file_get_contents("$rootDir/tests/mocks/$fileName.json");
 
             $payload = \json_decode($mockData, true);
         } else {
