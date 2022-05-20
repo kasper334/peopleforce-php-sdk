@@ -14,6 +14,11 @@ abstract class BaseEndpoint
     private $apiKey;
 
     /**
+     * @var string|null
+     */
+    private $apiBase;
+
+    /**
      * @var \GuzzleHttp\Client
      */
     private $httpClient;
@@ -26,9 +31,10 @@ abstract class BaseEndpoint
     /**
      * @param string $apiKey
      */
-    public function __construct(string $apiKey)
+    public function __construct(string $apiKey, ?string $apiBase = null)
     {
         $this->apiKey = $apiKey;
+        $this->apiBase = is_null($apiBase) ? self::API_BASE : $apiBase;
         $this->httpClient = new \GuzzleHttp\Client();
     }
 
@@ -50,7 +56,7 @@ abstract class BaseEndpoint
     public function __get($name)
     {
         if (\array_key_exists($name, $this->subEndpoints) && \is_subclass_of($this->subEndpoints[$name], self::class)) {
-            return new $this->subEndpoints[$name]($this->apiKey);
+            return new $this->subEndpoints[$name]($this->apiKey, $this->apiBase);
         }
 
         throw new \Exception("Property \"{$name}\" not found");
@@ -113,7 +119,7 @@ abstract class BaseEndpoint
 
             $payload = \json_decode($mockData, true);
         } else {
-            $response = $this->httpClient->request($method, self::API_BASE . $endpoint, compact('headers', 'query'));
+            $response = $this->httpClient->request($method, $this->apiBase . $endpoint, compact('headers', 'query'));
 
             $payload = \json_decode($response->getBody()->getContents(), true);
         }

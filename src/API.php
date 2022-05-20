@@ -29,11 +29,18 @@ class API
     private $apiKey;
 
     /**
-     * @param string $apiKey PeopleForce API key, can be obtained at https://{subdomain}.peopleforce.io/settings/api_keys
+     * @var string|null
      */
-    public function __construct(string $apiKey)
+    private $apiBase;
+
+    /**
+     * @param string $apiKey PeopleForce API key, can be obtained at https://{subdomain}.peopleforce.io/settings/api_keys
+     * @param string|null $apiBase Base API origin, defaults to "https://app.peopleforce.io/api/public/v1"
+     */
+    public function __construct(string $apiKey, ?string $apiBase = null)
     {
         $this->apiKey = $apiKey;
+        $this->apiBase = $apiBase;
     }
 
     /**
@@ -50,6 +57,6 @@ class API
             throw new \Exception("Entity for endpoint \"{$name}\" must extend BaseEndpoint");
         }
 
-        return new self::$endpoints[$name]($this->apiKey);
+        return new self::$endpoints[$name]($this->apiKey, $this->apiBase);
     }
 }
